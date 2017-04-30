@@ -26,12 +26,16 @@
     <loggers>
         <logger name="com.bow.log4j2" additivity="false" level="trace">
             <!-- 只有手机号15812345678会打印日志 -->
-            <ThreadContextMapFilter>
-                <KeyValuePair key="phoneNumber" value="15812345678"/>
-            </ThreadContextMapFilter>
+            <!--<ThreadContextMapFilter>-->
+                <!--<KeyValuePair key="phoneNumber" value="15812345678"/>-->
+            <!--</ThreadContextMapFilter>-->
 
             <AppenderRef ref="Console"/>
             <AppenderRef ref="sqlFile"/>
+        </logger>
+
+        <logger name="org.springframework" level="debug">
+            <AppenderRef ref="Console"/>
         </logger>
 
         <!-- 没有特别规定的包采用此配置 -->
