@@ -1,5 +1,6 @@
+# 线程栈
 
--- 初始化
+## 初始化
 at com.bow.log4j2.appender.ArchiveRollingFileAppender.createAppender(ArchiveRollingFileAppender.java:94)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-1)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -19,7 +20,7 @@ at org.apache.logging.log4j.core.config.Configurator.initialize(Configurator.jav
 at org.apache.logging.log4j.core.config.Configurator.initialize(Configurator.java:67)
 at com.bow.log4j2.appender.ConfigTest.main(ConfigTest.java:24)
 
--- 加载组件
+## 加载组件
 at org.apache.logging.log4j.core.config.plugins.util.PluginManager.collectPlugins(PluginManager.java:128)
 at org.apache.logging.log4j.core.pattern.PatternParser.<init>(PatternParser.java:131)
 at org.apache.logging.log4j.core.pattern.PatternParser.<init>(PatternParser.java:112)
@@ -40,7 +41,7 @@ at org.apache.logging.log4j.core.config.Configurator.initialize(Configurator.jav
 at com.bow.log4j2.appender.ConfigTest.main(ConfigTest.java:26)
 
 
--- 输出日志 --
+## 输出日志
 at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:160)
 at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:156)
 at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:129)
