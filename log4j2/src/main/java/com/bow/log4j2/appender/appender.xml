@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 配置更改,最迟60s生效, log4j2框架本身的日志用trace输出 -->
+<configuration monitorInterval="60" status="TRACE">
+
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+
+        <ArchiveRollingFile name="archiveLog"
+                            fileName="./rolling.log"
+                            filePattern="./rolling-$${date:yyyyMMdd}-%i.log">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!--<SizeBasedTriggeringPolicy size="500"/>-->
+                <LineBasedTriggeringPolicy size="10" maxElapsedTime="10" />
+            </Policies>
+            <DefaultArchiveRolloverStrategy max="5"/>
+        </ArchiveRollingFile>
+    </appenders>
+
+
+    <loggers>
+        <logger name="com.bow.log4j2" additivity="false" includeLocation="true" level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="archiveLog"/>
+        </logger>
+        <logger name="com.apache" level="trace" />
+
+
+        <!-- 没有特别规定的包采用此配置 -->
+        <root level="debug">
+            <AppenderRef ref="Console"/>
+        </root>
+    </loggers>
+</configuration>

@@ -12,6 +12,6 @@ public class Log4jTest {
 
     @Test
     public void test1(){
-        LOGGER.info("test");
+        LOGGER.info("demo message");
     }
 }
